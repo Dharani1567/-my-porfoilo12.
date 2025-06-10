@@ -6,20 +6,189 @@
   <title>Dharani Kanaparthi| Portfolio</title>
   <link rel="stylesheet" href="css-2.css">
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #000000;
-      --accent: #0077ff;
-    }
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-    [data-theme='dark'] {
-      --bg: #1e1e1e;
-      --text: #f0f0f0;
-      --accent: #00bcd4;
-    }
+.projects {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.project-card {
+  display: flex;
+  margin-bottom: 40px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  
+}
+
+.project-card:nth-child(n) {
+  flex-direction: row-reverse;
+}
+
+.text-content,
+.image-content {
+  flex: 1 1 50%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.text-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.text-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+#contact {
+  padding: 20px;
+  background-color:transparent;
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  flex-wrap: wrap;
+}
+
+.contact-icons a img {
+  width: 40px;  /* make icons small */
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+/* Section Styling */
+#education {
+  background-color:white;
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+#education h2.bold {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 2px black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Education Entry Layout */
+.education-entry {
+  position: relative;
+  background-color:white;
+  border-left: 5px solid black;
+  padding: 1rem 2rem 1rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+/* Text Content */
+.education-entry h3.outlined {
+  font-size: 1.4rem;
+  color:black;
+  margin: 0 0 0.5rem;
+}
+
+.education-entry p,
+.education-entry li {
+  font-size: 0.95rem;
+  color:black;
+  margin: 0.3rem 0;
+}
+
+.education-entry ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Image positioned outside right */
+.education-entry img {
+  position: absolute;
+  top: 50%;
+  right: -110px; /* Push image outside the card */
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color:white;
+}
+
+/* Responsive (image moves below content on small screens) */
+@media (max-width: 700px) {
+  .education-entry {
+    padding-right: 1rem;
+  }
+
+  .education-entry img {
+    position: static;
+    display: block;
+    margin: 1rem auto 0;
+    transform: none;
+  }
+}
+
+
+
+
+
+  
+  
   </style>
 </head>
-<body style="background-image: url('Screenshot 2025-04-07 153859.png'); height: 400px; width: 100%; background-size: cover; background-position: center;">
 
   <header>
     <div class="nav-links">
@@ -28,23 +197,34 @@
       <a href="#contact">Contact</a>
       <a href="#education">education</a>
     </div>
-    <div class="selectors">
-      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-      <form action="" method="get">
-        <select name="language" onchange="this.form.action=this.value; this.form.submit()">
-          <option value="">Select Language</option>
-          <option value="index.html">English</option>
-          <option value="German.html">German</option>
-          <option value="Telugu.html">Telugu</option>
-        </select>
-      </form>
       
     </div>
   </header>
 
   <main>
+   <section class="intro-container">
+  <div class="intro-text">
+    <h1>
+      Hello I’m <span class="bold">Dharani Kanaparthi.</span><br>
+      <span class="bold">Data Science</span> <span class="outlined">Enthusiast</span><br>
+      Based In <span class="bold">India.</span>
+    </h1>
+
+    <div class="description">
+      <p>
+        I'm Dharani Kanaparthi, a passionate <strong>Data Science enthusiast</strong> with a strong foundation in Python, Pandas, NumPy, and Machine Learning. My journey in data science is driven by curiosity and a desire to turn raw data into meaningful insights.
+      </p>
+    </div>
+  </div>
+
+  <div class="intro-image">
+    <img src="1.png" alt="Dharani working on laptop">
+  </div>
+</section>
+
+  </section>
     <section id="about">
-      <h2>About Me</h2>
+      <h2 style="color: black;">About Me</h2>
       <p>
         Hi, I'm Dharani kanaparthi, a passionate <strong>Data Science enthusiast</strong> with a strong foundation in Python, Pandas, NumPy, and Machine Learning. My journey in data science is driven by curiosity and a desire to turn raw data into meaningful insights.
       </p>
@@ -59,88 +239,108 @@
       </p>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p></p>
-      <h1>Arduino Attendance Fingerprint Tracker </h1>
-      <p> Arduino-based fingerprint attendance system records user entry using a fingerprint sensor and stores the data.
-It ensures secure, contactless attendance tracking with real-time verification.</p>
-      <iframe src="WhatsApp Video 2024-11-20 at 5-VEED (online-video-cutter.com).mp4" title="Project Demo Video"></iframe>
-      
-      
-      <h1>Resource Community Sharing Project</h1>
-      <p>The Resource Community Sharing project aims<br>
-        to encourage the exchange of unused or gently<br>
-        used items such as clothes, books, toys, and essentials within the community.<br> By fostering a culture of sharing, the project not only supports those <br>
-        in need but also promotes sustainability and social responsibility among participants.</p>
-        <iframe src="RESOURCE COMMUNITY SHARING.mp4" title="Project Demo Video"></iframe>
-        
-      
-        <a href="Compassion-in-Action-Sharing-Resources-with-the-Community (3).pptx" target="_blank">
-          
-      <button class="button">
-      <span class="button-content">Doucument </span>
-      </button>
-        </a>
+     <section id="projects">
+    <h1 class="title">Projects</h1>
 
-        
-        
-        
+    <div class="project-card">
+      <div class="text-content">
+        <h2>Fingerprint Attendance system</h2>
+        <p>A fingerprint system using Arduino captures and verifies a user’s fingerprint to allow or deny access based on stored biometric data..</p>
+        <button>View Project</button>
+      </div>
+      <div class="image-content">
+        <img src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-0524-61fd-a984-3e186b03060d/raw?se=2025-06-10T04%3A13%3A14Z&sp=r&sv=2024-08-04&sr=b&scid=18ed82b4-9a97-5067-977e-2fe8be5b1969&skoid=7399a3a4-0259-4d43-bcd6-a56ceeb4c28b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-10T02%3A54%3A35Z&ske=2025-06-11T02%3A54%3A35Z&sks=b&skv=2024-08-04&sig=5UbrBSyxWM8LGPmM5OPeAKUBRFam4ze1tITF3lbp2Yk%3D" alt="Project 1">
+      </div>
+    </div>
 
-    </section>
+    <div class="project-card">
+      <div class="image-content">
+        <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-a384-61f8-8a9d-cbf7fca4d4dc/raw?se=2025-06-10T04%3A11%3A30Z&sp=r&sv=2024-08-04&sr=b&scid=a93543be-1428-5369-b1e6-4807c97ae6fa&skoid=7399a3a4-0259-4d43-bcd6-a56ceeb4c28b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-10T02%3A54%3A17Z&ske=2025-06-11T02%3A54%3A17Z&sks=b&skv=2024-08-04&sig=q8Ydq4a4k9UHwpFikiAI23Z46AXJ87D5ctdw5gmTN%2BE%3D" alt="Project 2">
+      </div>
+      <div class="text-content">
+        <h2>Resource Community Sharing</h2>
+        <p>Resource community sharing is where you donate items that are no longer useful to you but can be valuable to others in need..</p>
+        <button>View Project</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="text-content">
+        <h2>Analysis of Movie Datset</h2>
+        <p>This project analyzes a movie dataset to uncover trends and patterns in genres, ratings, revenues, and other key features. The goal is to understand what factors contribute to a movie's popularity and success.</p>
+        <button>View Project</button>
+      </div>
+      <div class="image-content">
+        <img src="data.jpg" alt="Project 3">
+      </div>
+    </div>
+
+     </section>
+      
     <section id="education">
-      <img src = "WhatsApp Image 2025-04-07 at 09.07.50_5e57686e.jpg" alt="DAV" height="200px" width="200px">
-      <div style = "display:block; margin-left: 10px;overflow: auto;">   
-        
-        <h2 style="font-family: Arial, Helvetica, sans-serif;">Class 1-5</h2>
-            <p>Howard Model School</p>
-            <p>Howard Model School, , Ashok Nagar is a school in Hyderabad, India.<br>
-                 It follows the CBSE curriculum. It is situated in Ashok Nagar, Hyderabad and has about 1000 students. It is one of the 
-                 most well-known in the city. </p>
-          <img src = "cropped-logo33-300x165.png" alt="DAV" height="200px" width="250px">
-          <div style = "display:block; margin-left: 10px;overflow: auto;">  
-          
-          <h2 style="font-family: Arial, Helvetica, sans-serif;">Class 6-10</h2>
-            <p>Slate The School</p>
-            <p>Slate The School,  is a modern educational institution focused on holistic development through innovative teaching methods.
-               It offers a balanced blend of academics, extracurriculars, and life skills in a nurturing environment. </p>
-          </div>
-        
-          
-      </div>
-      <div>
+  <h2 class="bold"> Education</h2>
 
-      <img src = "th (3).jpg" alt="DAV" height="200px" width="200px">
-      <h2 style="font-family: Arial, Helvetica, sans-serif;">Class 11- 12</h2>
-      <p>Sri Chaitanya Madhapur</p>
-      <p>Sri Chaitanya Educational Institutions is a group of education institutions chain of schools, junior colleges, hostels,<br>
-           coaching institutions for IIT-JEE, NEET, EAMCET and UPSC-CS </p>
-      </div>
+  <div class="education-entry">
+    <img src="data:image/png;base64,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" alt="Projec">
+    <h3 class="outlined">Bachelor of Technology (B.Tech) in Computer Science Engineering</h3>
+    <p><strong>Amrita Vishwa Vidyapeetham</strong>, Coimbatore, Tamil Nadu</p>
+    <p>2024 – 2028</p>
+    <ul>
+      <li>Pursuing undergraduate degree in Computer Science Engineering</li>
+    </ul>
+  </div>
 
-    </section>
-    
+  <div class="education-entry">
+    <img src="srichaitanya.png" alt="Projec">
+    <h3 class="outlined">Sri Chaitanya</h3>
+    <p>SR Nagar, Hyderabad</p>
+    <p>2019 – 2024</p>
+    <ul>
+      <li>Completed Intermediate / Higher Secondary Education</li>
+    </ul>
+  </div>
 
-    
+  <div class="education-entry">
+    <img src="slate.png" alt="Projec">
+    <h3 class="outlined">Slate The School</h3>
+    <p>Ammerpet, Hyderabad</p>
+    <p>2018</p>
+    <ul>
+      <li>Completed Class 12 / Higher Secondary</li>
+    </ul>
+  </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: dharanikan1567parthi@gmail.com</p>
-      <p>LinkedIn:https://www.linkedin.com/in/dharani-kanparthi-23608135b/ </p>
-    </section>
+  <div class="education-entry">
+    <div class="howard">
+    <img src="howard model school.png" alt="Projec">
+    </img> </div>
+    <h3 class="outlined">Howard Model School</h3>
+    <p>Ashok Nagar, Hyderabad</p>
+    <p>2014 – 2017</p>
+    <ul>
+      <li>Completed Secondary Education with focus on Science</li>
+    </ul>
+  </div>
+</section>
+ <section id="contact">
+  <h2 style="color: black;">Contact Me</h2>
+  <div class="contact-icons">
+    <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank">
+      <img src="discord.png" alt="Discord" />
+    </a>
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank">
+      <img src="linkedin-logo.png" alt="LinkedIn" />
+    </a>
+    <a href="https://www.reddit.com/user/YOUR_REDDIT_ID" target="_blank">
+      <img src="reddit.png" alt="Reddit" />
+    </a>
+    <a href="mailto:your.email@gmail.com">
+      <img src="gmail-logo.png" alt="Gmail" />
+    </a>
+  </div>
+</section>
+
   </main>
-
-
-
-  <script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      if (currentTheme === "dark") {
-        document.documentElement.setAttribute("data-theme", "light");
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    }
-  </script>
 </body>
 </html>
 
